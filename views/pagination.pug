@@ -1,0 +1,9 @@
+- var offsetPagination = 1;
+- var linkNumbers = 1;
+    .pagination
+         while offsetPagination < count
+            if search
+                a(href='/books?offset=' + (linkNumbers-1) + '&search=' + search class="pagination-item " + (linkNumbers-1 == offset ? 'disabled' : '')) #{linkNumbers++}
+            else
+                a(href='/books?offset=' + (linkNumbers-1) class="pagination-item " + (linkNumbers-1 == offset ? 'disabled' : ''))  #{linkNumbers++}
+            -offsetPagination+=booksLimit;
