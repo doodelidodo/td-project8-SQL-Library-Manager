@@ -7,6 +7,6 @@ The pagination is also an extra feature.
 I added also css classes to style the search and the pagination.
 
 ### To start the app
-1. switch to the sql-library-manager folder
+1. switch to the app folder
 2. npm install
 3. npm start
