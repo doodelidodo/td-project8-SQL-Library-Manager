@@ -34,6 +34,7 @@ app.use('/books', booksRouter);
 })();
 
 app.use((req, res, next) => {
+  console.log('henlo');
   const err = new Error('not Found');
   err.status = 404;
   next(err);
@@ -41,10 +42,11 @@ app.use((req, res, next) => {
 
 app.use((err, req, res, next) => {
   res.locals.error = err;
+  console.log(err.status)
   res.status(err.status || 500);
   res.locals.message = err.message ? err.message: "Sorry! There was an unexpected error on the server.";
   if(err.status === 404) {
-    res.render('pageNotFound', err);
+    res.render('page-not-found', err);
   } else {
     res.render('error', err);
   }
